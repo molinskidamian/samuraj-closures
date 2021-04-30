@@ -1,8 +1,8 @@
-
+let number = 0;
 
 const add = () => {
- let number = 0;
- number++;
- document.body.textContent = `aktualny stan licznika to ${number}`;
+  number++;
+  document.body.textContent = `Aktualny stan licznika to: ${number}`;
 }
-document.addEventListener('click', add)
+
+window.addEventListener('click', add);
