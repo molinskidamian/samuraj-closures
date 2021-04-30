@@ -4,11 +4,11 @@
  *
  * * 2. Closure - zmienna istnieje w innej funkcji, mimo to, że funkcja, w której była stworzona ta zmienna nie jest już aktywna.
  *
- * * 3. W pamięci programu zmienna istnieje jeśli prowadzi do niej referencja z innej funckji. Możemu mieć do niej dost,ep, ale także je zmieniać.
+ * * 3. W pamięci programu zmienna istnieje jeśli prowadzi do niej referencja z innej funckji. Możemu mieć do niej dostęp, ale także je zmieniać.
  */
 
 // example 1.
-function x() {
+/* function x() {
   let number = 0;
 
   function y() {
@@ -19,4 +19,17 @@ function x() {
 
 const example = x();
 
-example();
+example(); */
+
+
+// Example 2
+const add = (start = 0) => {
+  let number = start;
+  return () => {
+    number++;
+    document.body.textContent = `Aktualny stan licznika kliknięć to: ${number}`;
+  }
+}
+
+const counter = add();
+document.addEventListener('click', counter);
