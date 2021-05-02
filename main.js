@@ -23,13 +23,29 @@ example(); */
 
 
 // Example 2
-const add = (start = 0) => {
-  let number = start;
-  return () => {
-    number++;
-    document.body.textContent = `Aktualny stan licznika kliknięć to: ${number}`;
+// const add = (start = 0) => {
+//   let number = start;
+//   return () => {
+//     number++;
+//     document.body.textContent = `Aktualny stan licznika kliknięć to: ${number}`;
+//   }
+// }
+
+// const counter = add();
+// document.addEventListener('click', counter);
+
+
+// Example 3
+
+const user = (name = "nieznajomy", age) => {
+  let userName = name;
+  let userAge = age;
+
+  function showName() {
+    console.log(`Cześć ${userName}! ${userAge >= 18 ? 'Możesz kupić sobie piwo.' : 'Nie możesz kupić sobie piwa.'}`);
   }
+
+  return showName;
 }
 
-const counter = add();
-document.addEventListener('click', counter);
+const mieszko = user();
